@@ -1,24 +1,25 @@
+"use client"
+
 import React from 'react';
 import clsx from 'clsx';
+import { motion, MotionProps } from 'framer-motion';
 
 type BentoCardProps = {
   children: React.ReactNode;
-  colSpan?: number;
   className?: string;
-};
+} & MotionProps;
 
-const BentoCard: React.FC<BentoCardProps> = ({ children, colSpan = 1, className = '' }) => {
+const BentoCard: React.FC<BentoCardProps> = ({ children, className = '', ...motionProps }) => {
   return (
-    <div
+    <motion.div
       className={clsx(
-        `p-4 rounded-3xl bg-white border-2 border-gray-400`,
+        `p-3 sm:p-5 rounded-2xl sm:rounded-3xl bg-white border-2 border-gray-400 col-span-1`,
         className,
-        colSpan === 1 && 'col-span-1',
-        colSpan === 2 && 'col-span-2',
       )}
+      {...motionProps}
     >
       {children}
-    </div>
+    </motion.div>
   );
 };
 

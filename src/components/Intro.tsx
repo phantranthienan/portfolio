@@ -9,7 +9,7 @@ import TypingEffect from '@/components/common/TypingEffect'
 
 import { BsArrowRight } from 'react-icons/bs'
 import { HiDownload } from 'react-icons/hi'
-import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 const Intro = () => {
   return (
@@ -23,7 +23,7 @@ const Intro = () => {
           }}
         >
             <Image 
-                src="/ThienAnPortrait.jpg" 
+                src="/images/Portrait.jpg" 
                 alt="Thien An Portrait"
                 width={200}
                 height={200}
@@ -53,7 +53,7 @@ const Intro = () => {
           INSA Centre Val de Loire. 
         </a> 
         <br />
-        I'm seeking {" "}
+        I&apos;m seeking {" "}
         <TypingEffect 
           texts={["a 4-month internship starting April 2025", "an apprenticeship for 2025-2026"]}
           delay={500}
