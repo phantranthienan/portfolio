@@ -14,6 +14,8 @@ const Home = () => {
         <Intro />
         <SectionDivider />
         <About />
+        <SectionDivider />
+        <Projects />
       </main>
   );
 }

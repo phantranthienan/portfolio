@@ -2,17 +2,15 @@ import React from 'react'
 import Image from 'next/image'
 
 import BentoCard from '@/components/common/BentoCard'
+import SectionHeading from './common/SectionHeading'
 import { Icon } from '@iconify/react'
 
 const About = () => {
   return (
-    <section className="max-w-[50rem]">
-      <h2
-        className="text-2xl sm:text-4xl font-bold uppercase 
-        tracking-widest text-center mb-8" 
-      >
+    <section className="max-w-[52rem]">
+      <SectionHeading>
         about me
-      </h2>
+      </SectionHeading>
 
       <div
         className="grid grid-cols-2 gap-3 sm:grid-cols-3
@@ -23,10 +21,10 @@ const About = () => {
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <p className="text-xs sm:text-sm text-justify font-geist-mono">
+          <p className="text-xs sm:text-sm font-geist-mono">
             A young {""}
             <span className="font-bold">Vietnamese</span> programmer with a {" "}
-            <span className="font-bold">deep love for software development, </span> I've embarked on a journey to France to pursue my dreams in technology. {" "}
+            <span className="font-bold">deep love for software development, </span> I&apos;ve embarked on a journey to France to pursue my dreams in technology. {" "}
             <span className="font-bold">Hardworking, meticulous, and full of enthusiasm, </span> 
             I’m committed to honing my skills and contribute to the field.
           </p>

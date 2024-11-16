@@ -1,3 +1,5 @@
+import { getFilePublicUrl } from "./supabase";
+
 export const links = [
     {
       name: "Home",
@@ -46,3 +48,19 @@ export const skillsData = [
     "Django",
     "Framer Motion",
 ] as const;
+
+export const projectsData = [
+  {
+    title: "Kanban Board",
+    tags: ["React", "TypeScript", "Express", "MongoDB", "Redux"]
+  },
+  {
+    title: "Sudoku",
+    tags: ["React", "JavaScript", "styled-components", "Jotai"]
+  },
+  {
+    title: "Vaukazimut",
+    tags: ["React Native", "JavaScript", "Tailwind", "Expo", "Django"],
+    imageUrl: getFilePublicUrl("Projects", "Vaukazimut.png"),
+  }
+]
