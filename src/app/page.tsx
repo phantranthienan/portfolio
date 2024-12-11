@@ -9,15 +9,15 @@ import Contact from '@/components/Contact';
 import SectionDivider from '@/components/common/SectionDivider';
 
 const Home = () => {
-  return (
-      <main className="flex flex-col items-center p-4">
-        <Intro />
-        <SectionDivider />
-        <About />
-        <SectionDivider />
-        <Projects />
-      </main>
-  );
-}
+    return (
+        <main className="flex flex-col items-center p-4">
+            <Intro />
+            <SectionDivider />
+            <About />
+            <SectionDivider />
+            <Projects />
+        </main>
+    );
+};
 
 export default Home;
