@@ -10,10 +10,13 @@ import TypingEffect from '@/components/common/TypingEffect';
 import { BsArrowRight } from 'react-icons/bs';
 import { HiDownload } from 'react-icons/hi';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { useSectionInView } from '@/lib/hooks';
 
 const Intro = () => {
+    const { ref } = useSectionInView("Home");
     return (
         <section
+            ref={ref}
             className="max-w-[40rem] scroll-mt-[100rem] text-center"
             id="home"
         >

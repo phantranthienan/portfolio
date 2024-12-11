@@ -6,10 +6,14 @@ import { motion } from 'framer-motion';
 import BentoCard from '@/components/common/BentoCard';
 import SectionHeading from './common/SectionHeading';
 import { Icon } from '@iconify/react';
+import { useSectionInView } from '@/lib/hooks';
+
 
 const About = () => {
+    const { ref } = useSectionInView('About', 0.75);
+
     return (
-        <section className="max-w-[56rem] scroll-mt-24" id="about">
+        <section ref={ref} className="max-w-[56rem] scroll-mt-24" id="about">
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}

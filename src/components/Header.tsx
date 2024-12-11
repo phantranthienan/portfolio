@@ -7,7 +7,8 @@ import { links } from '@/lib/data';
 import { useActiveSectionContext } from '@/context/activeSectionContext';
 
 const Header = () => {
-    const { activeSection, setActiveSection } = useActiveSectionContext();
+    const { activeSection, setActiveSection, setTimeOfLastClick } =
+        useActiveSectionContext();
     return (
         <header className="relative z-[999]">
             <motion.div
@@ -34,7 +35,10 @@ const Header = () => {
                                             activeSection === link.name,
                                     }
                                 )}
-                                onClick={() => setActiveSection(link.name)}
+                                onClick={() => {
+                                    setActiveSection(link.name);
+                                    setTimeOfLastClick(Date.now());
+                                }}
                             >
                                 {link.name}
                                 {link.name === activeSection && (
