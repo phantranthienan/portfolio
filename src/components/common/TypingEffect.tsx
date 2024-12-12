@@ -16,7 +16,7 @@ const TypingEffect: React.FC<TypingEffectProps> = ({ texts, delay = 1000 }) => {
     useEffect(() => {
         const delayTimeout = setTimeout(() => setTypingStarted(true), delay);
         return () => clearTimeout(delayTimeout);
-    }, []);
+    }, [delay]);
 
     useEffect(() => {
         if (!typingStarted) return;

@@ -19,7 +19,7 @@ const Intro = () => {
     return (
         <section
             ref={ref}
-            className="max-w-[40rem] scroll-mt-[100rem] text-center mb-16 sm:mb-0"
+            className="mb-16 max-w-[40rem] scroll-mt-[100rem] text-center sm:mb-0"
             id="home"
         >
             <div className="flex items-center justify-center text-left">

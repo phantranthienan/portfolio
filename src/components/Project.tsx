@@ -32,7 +32,7 @@ const Project: React.FC<ProjectProps> = ({
             }}
             className="group relative mb-3 max-w-[44rem] overflow-hidden rounded-xl border border-black/5 bg-gray-100 transition last:mb-0 hover:bg-gray-200 sm:mb-8 sm:h-[22rem]"
         >
-            <div className="flex h-full flex-col py-4 pl-4 sm:group-even:ml-[50%] sm:max-w-[50%] sm:py-8 sm:pl-8 sm:group-even:pl-0 sm:group-even:pr-8">
+            <div className="flex h-full flex-col py-4 pl-4 sm:max-w-[50%] sm:py-8 sm:pl-8 sm:group-even:ml-[50%] sm:group-even:pl-0 sm:group-even:pr-8">
                 <h3 className="text-2xl font-semibold"> {title} </h3>
                 <p className="mt-2 text-lg leading-relaxed text-gray-700">
                     {description}
@@ -52,11 +52,7 @@ const Project: React.FC<ProjectProps> = ({
                 src={imageUrl}
                 alt={title}
                 quality={95}
-                className="absolute hidden sm:block -right-8 top-8 
-                w-[21rem] rounded-t-lg shadow-2xl transition 
-                group-even:-left-8 group-even:right-[initial] group-hover:-translate-x-3 
-                group-hover:translate-y-3 group-hover:-rotate-3 group-hover:scale-[1.05]
-                group-even:group-hover:translate-x-3 group-even:group-hover:rotate-3"
+                className="absolute -right-8 top-8 hidden w-[21rem] rounded-t-lg shadow-2xl transition group-even:-left-8 group-even:right-[initial] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-3 group-hover:scale-[1.05] group-even:group-hover:translate-x-3 group-even:group-hover:rotate-3 sm:block"
             />
         </motion.article>
     );

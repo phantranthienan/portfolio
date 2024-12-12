@@ -12,7 +12,11 @@ const About = () => {
     const { ref } = useSectionInView('About', 0.75);
 
     return (
-        <section ref={ref} className="max-w-[54rem] scroll-mt-24 mb-16 sm:mb-0" id="about">
+        <section
+            ref={ref}
+            className="mb-16 max-w-[54rem] scroll-mt-24 sm:mb-0"
+            id="about"
+        >
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{
@@ -35,11 +39,12 @@ const About = () => {
                     }}
                     viewport={{ once: true }}
                 >
-                    <p className="font-geist-mono text-sm text-justify">
-                        A tech enthusiast from Vietnam 👨‍💻 and a caffeine-powered code machine ☕.
-                        Doing LeetCode for fun (and frustration) 🧠. 
-                        Curious, meticulous, hardworking, and driven by problem-solving, 
-                        I love chasing bugs 🪲 (not really), building websites, and exploring new tech!
+                    <p className="text-justify font-geist-mono text-sm">
+                        A tech enthusiast from Vietnam 👨‍💻 and a caffeine-powered
+                        code machine ☕. Doing LeetCode for fun (and
+                        frustration) 🧠. Curious, meticulous, hardworking, and
+                        driven by problem-solving, I love chasing bugs 🪲 (not
+                        really), building websites, and exploring new tech!
                     </p>
                 </BentoCard>
 
@@ -157,7 +162,7 @@ const About = () => {
                 </BentoCard>
 
                 <BentoCard
-                    className="order-6 col-span-2 sm:order-5 sm:col-span-1 text-center flex flex-col items-center justify-center"
+                    className="order-6 col-span-2 flex flex-col items-center justify-center text-center sm:order-5 sm:col-span-1"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{
                         opacity: 1,
@@ -166,18 +171,18 @@ const About = () => {
                     }}
                     viewport={{ once: true }}
                 >
-                    Don't have idea yet so I just put my cats here 🐱
-                    <Image 
-                        src={"/images/Cats.jpg"}
+                    Don&apos;t have idea yet so I just put my cats here 🐱
+                    <Image
+                        src={'/images/Cats.jpg'}
                         alt="My Cats"
                         height={200}
                         width={200}
-                        className='rounded-xl w-full object-cover max-w-[300px]'
+                        className="w-full max-w-[300px] rounded-xl object-cover"
                     />
                 </BentoCard>
 
                 <BentoCard
-                    className="order-5 col-span-2 gap-y-2 sm:order-6 flex flex-col justify-center sm:px-10"
+                    className="order-5 col-span-2 flex flex-col justify-center gap-y-2 sm:order-6 sm:px-10"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{
                         opacity: 1,

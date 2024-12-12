@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import SectionHeading from './common/SectionHeading';
-import { FaPaperPlane } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useSectionInView } from '@/lib/hooks';
 import { sendEmail } from '@/actions/sendEmail';
@@ -25,7 +24,7 @@ const Contact = () => {
             viewport={{ once: true }}
         >
             <SectionHeading>Contact Me</SectionHeading>
-            <p className=" sm:-mt-6 text-gray-700">
+            <p className="text-gray-700 sm:-mt-6">
                 Contact me directly at{' '}
                 <a
                     className="underline"
@@ -38,6 +37,7 @@ const Contact = () => {
 
             <form
                 action={async (formData) => {
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
                     const { data, error } = await sendEmail(formData);
                     if (error) {
                         toast.error(error);
