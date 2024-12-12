@@ -39,7 +39,7 @@ const About = () => {
                     }}
                     viewport={{ once: true }}
                 >
-                    <p className="text-justify font-geist-mono text-sm">
+                    <p className="text-justify font-geist-mono text-xs sm:text-sm">
                         A tech enthusiast from Vietnam 👨‍💻 and a caffeine-powered
                         code machine ☕. Doing LeetCode for fun (and
                         frustration) 🧠. Curious, meticulous, hardworking, and
