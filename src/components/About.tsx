@@ -16,7 +16,10 @@ const About = () => {
         <section ref={ref} className="max-w-[56rem] scroll-mt-24" id="about">
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
+                whileInView={{ 
+                    opacity: 1, scale: 1 
+                }}
+                viewport={{ once: true }}
             >
                 <SectionHeading>about me</SectionHeading>
             </motion.div>
@@ -24,8 +27,9 @@ const About = () => {
             <div className="grid w-full grid-cols-2 gap-3 sm:grid-cols-3">
                 <BentoCard
                     className="order-1 col-span-2 flex items-center justify-center"
-                    initial={{ opacity: 0, x: -100 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    viewport={{ once: true }}
                 >
                     <p className="font-geist-mono text-sm">
                         A young {''}
@@ -46,8 +50,9 @@ const About = () => {
 
                 <BentoCard
                     className="order-3 flex flex-col justify-evenly gap-y-2 sm:order-2"
-                    initial={{ opacity: 0, y: -100 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    viewport={{ once: true }}
                 >
                     <div className="flex items-center gap-x-2">
                         <Icon icon="flag:vn-4x3" width={40} />
@@ -83,8 +88,9 @@ const About = () => {
 
                 <BentoCard
                     className="order-2 col-span-2 flex items-center justify-center sm:order-3"
-                    initial={{ opacity: 0, x: -100 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    viewport={{ once: true }}
                 >
                     <Image
                         src="/images/Logo_INSACVL.png"
@@ -99,8 +105,9 @@ const About = () => {
 
                 <BentoCard
                     className="order-4 flex items-center justify-center"
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    viewport={{ once: true }}
                 >
                     <div className="grid grid-cols-2 gap-2">
                         <div>
@@ -144,16 +151,18 @@ const About = () => {
 
                 <BentoCard
                     className="order-6 col-span-2 sm:order-5 sm:col-span-1"
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    viewport={{ once: true }}
                 >
                     Song I Like
                 </BentoCard>
 
                 <BentoCard
                     className="order-5 col-span-2 gap-y-2 sm:order-6"
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    viewport={{ once: true }}
                 >
                     <p className="text-center font-geist-mono text-xs font-medium italic text-gray-700 sm:text-sm">
                         &quot;People think that computer science is the art of
