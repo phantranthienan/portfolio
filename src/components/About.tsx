@@ -151,7 +151,7 @@ const About = () => {
                         </div>
                         <div>
                             <Image
-                                src="/images/hobbies/PingPong.png"
+                                src="/images/hobbies/Pingpong.png"
                                 alt="PingPong"
                                 height={100}
                                 width={100}
