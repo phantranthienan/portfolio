@@ -43,7 +43,7 @@ const Intro = () => {
             </div>
 
             <motion.p
-                className="mb-4 mt-4 px-4 font-geist-mono text-sm sm:text-lg"
+                className="mb-4 mt-4 px-4 font-geist-mono text-xs sm:text-base"
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
             >
