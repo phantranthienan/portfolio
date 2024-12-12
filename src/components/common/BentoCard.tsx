@@ -17,7 +17,7 @@ const BentoCard: React.FC<BentoCardProps> = ({
     return (
         <motion.div
             className={clsx(
-                `col-span-1 rounded-2xl border-4 border-gray-200 bg-white p-3 sm:rounded-3xl sm:p-5`,
+                `col-span-1 rounded-2xl border-4 border-gray-200 bg-white p-2 sm:rounded-3xl sm:p-6`,
                 className
             )}
             {...motionProps}

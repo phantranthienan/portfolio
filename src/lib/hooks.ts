@@ -6,7 +6,7 @@ import type { SectionName } from './types';
 
 export const useSectionInView = (sectionName: SectionName, threshold = 1) => {
     const { ref, inView } = useInView({
-        threshold
+        threshold,
     });
     const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
     useEffect(() => {

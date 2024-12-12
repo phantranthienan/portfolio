@@ -11,13 +11,15 @@ import { BsArrowRight } from 'react-icons/bs';
 import { HiDownload } from 'react-icons/hi';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { useSectionInView } from '@/lib/hooks';
+import { useActiveSectionContext } from '@/context/activeSectionContext';
 
 const Intro = () => {
-    const { ref } = useSectionInView("Home");
+    const { ref } = useSectionInView('Home');
+    const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
     return (
         <section
             ref={ref}
-            className="max-w-[40rem] scroll-mt-[100rem] text-center"
+            className="max-w-[40rem] scroll-mt-[100rem] text-center mb-16 sm:mb-0"
             id="home"
         >
             <div className="flex items-center justify-center text-left">
@@ -90,6 +92,10 @@ const Intro = () => {
                 <Link
                     href="#contact"
                     className="group flex items-center gap-2 rounded-full bg-gray-900 px-5 py-2 text-white outline-none transition hover:scale-110 active:scale-105"
+                    onClick={() => {
+                        setActiveSection('Contact');
+                        setTimeOfLastClick(Date.now());
+                    }}
                 >
                     Contact me here{' '}
                     <BsArrowRight className="transition group-hover:translate-x-1" />

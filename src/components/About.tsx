@@ -8,16 +8,16 @@ import SectionHeading from './common/SectionHeading';
 import { Icon } from '@iconify/react';
 import { useSectionInView } from '@/lib/hooks';
 
-
 const About = () => {
     const { ref } = useSectionInView('About', 0.75);
 
     return (
-        <section ref={ref} className="max-w-[56rem] scroll-mt-24" id="about">
+        <section ref={ref} className="max-w-[54rem] scroll-mt-24 mb-16 sm:mb-0" id="about">
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ 
-                    opacity: 1, scale: 1 
+                whileInView={{
+                    opacity: 1,
+                    scale: 1,
                 }}
                 viewport={{ once: true }}
             >
@@ -28,30 +28,29 @@ const About = () => {
                 <BentoCard
                     className="order-1 col-span-2 flex items-center justify-center"
                     initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                        transition: { type: 'tween' },
+                    }}
                     viewport={{ once: true }}
                 >
-                    <p className="font-geist-mono text-sm">
-                        A young {''}
-                        <span className="font-bold">Vietnamese</span> programmer
-                        with a{' '}
-                        <span className="font-bold">
-                            deep love for software development,{' '}
-                        </span>{' '}
-                        I&apos;ve embarked on a journey to France to pursue my
-                        dreams in technology.{' '}
-                        <span className="font-bold">
-                            Hardworking, meticulous, and full of enthusiasm,{' '}
-                        </span>
-                        I’m committed to honing my skills and contribute to the
-                        field.
+                    <p className="font-geist-mono text-sm text-justify">
+                        A tech enthusiast from Vietnam 👨‍💻 and a caffeine-powered code machine ☕.
+                        Doing LeetCode for fun (and frustration) 🧠. 
+                        Curious, meticulous, hardworking, and driven by problem-solving, 
+                        I love chasing bugs 🪲 (not really), building websites, and exploring new tech!
                     </p>
                 </BentoCard>
 
                 <BentoCard
                     className="order-3 flex flex-col justify-evenly gap-y-2 sm:order-2"
                     initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                        transition: { type: 'tween' },
+                    }}
                     viewport={{ once: true }}
                 >
                     <div className="flex items-center gap-x-2">
@@ -89,7 +88,11 @@ const About = () => {
                 <BentoCard
                     className="order-2 col-span-2 flex items-center justify-center sm:order-3"
                     initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                        transition: { type: 'tween' },
+                    }}
                     viewport={{ once: true }}
                 >
                     <Image
@@ -106,7 +109,11 @@ const About = () => {
                 <BentoCard
                     className="order-4 flex items-center justify-center"
                     initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                        transition: { type: 'tween' },
+                    }}
                     viewport={{ once: true }}
                 >
                     <div className="grid grid-cols-2 gap-2">
@@ -150,18 +157,33 @@ const About = () => {
                 </BentoCard>
 
                 <BentoCard
-                    className="order-6 col-span-2 sm:order-5 sm:col-span-1"
+                    className="order-6 col-span-2 sm:order-5 sm:col-span-1 text-center flex flex-col items-center justify-center"
                     initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                        transition: { type: 'tween' },
+                    }}
                     viewport={{ once: true }}
                 >
-                    Song I Like
+                    Don't have idea yet so I just put my cats here 🐱
+                    <Image 
+                        src={"/images/Cats.jpg"}
+                        alt="My Cats"
+                        height={200}
+                        width={200}
+                        className='rounded-xl w-full object-cover max-w-[300px]'
+                    />
                 </BentoCard>
 
                 <BentoCard
-                    className="order-5 col-span-2 gap-y-2 sm:order-6"
+                    className="order-5 col-span-2 gap-y-2 sm:order-6 flex flex-col justify-center sm:px-10"
                     initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1, transition: { type: 'tween' } }}
+                    whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                        transition: { type: 'tween' },
+                    }}
                     viewport={{ once: true }}
                 >
                     <p className="text-center font-geist-mono text-xs font-medium italic text-gray-700 sm:text-sm">
