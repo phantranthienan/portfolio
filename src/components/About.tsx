@@ -162,7 +162,7 @@ const About = () => {
                 </BentoCard>
 
                 <BentoCard
-                    className="order-6 col-span-2 flex flex-col items-center justify-center text-center sm:order-5 sm:col-span-1"
+                    className="order-6 col-span-2 flex flex-col items-center justify-center text-center text-sm sm:order-5 sm:col-span-1"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{
                         opacity: 1,
@@ -171,13 +171,13 @@ const About = () => {
                     }}
                     viewport={{ once: true }}
                 >
-                    Don&apos;t have idea yet so I just put my cats here 🐱
+                    I&apos;m a cat lover, here are my cats 🐱
                     <Image
                         src={'/images/Cats.jpg'}
                         alt="My Cats"
                         height={200}
                         width={200}
-                        className="w-full max-w-[300px] rounded-xl object-cover"
+                        className="mt-2 w-full max-w-[300px] rounded-xl object-cover"
                     />
                 </BentoCard>
 

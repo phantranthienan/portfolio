@@ -37,7 +37,7 @@ const Intro = () => {
                         height={200}
                         quality="90"
                         priority={true}
-                        className="h-32 w-32 rounded-full border-[0.4rem] border-white object-cover shadow-xl"
+                        className="h-32 w-32 rounded-full border-[0.4rem] border-white object-cover shadow-xl sm:h-36 sm:w-36"
                     />
                 </motion.div>
             </div>
