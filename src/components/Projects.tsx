@@ -1,20 +1,29 @@
 'use client';
+
 import React from 'react';
+import { useTranslations } from 'next-intl';
+import { useSectionInView } from '@/lib/hooks';
 import SectionHeading from './common/SectionHeading';
 import Project from './Project';
-
-import { projectsData } from '@/lib/data';
-import { useSectionInView } from '@/lib/hooks';
+import { projectsStaticData } from '@/lib/data';
 
 const Projects = () => {
+    const t = useTranslations('Projects');
     const { ref } = useSectionInView('Projects', 0.5);
+    const keys = ['kanban', 'sudoku', 'vaukazimut'] as const;
+
     return (
         <section ref={ref} id="projects" className="mb-16 scroll-mt-24 sm:mb-0">
-            <SectionHeading>My Projects</SectionHeading>
+            <SectionHeading>{t('heading')}</SectionHeading>
             <div>
-                {projectsData.map((project, index) => (
-                    <React.Fragment key={index}>
-                        <Project {...project} />
+                {keys.map((key) => (
+                    <React.Fragment key={key}>
+                        <Project
+                            title={t(`${key}.title`)}
+                            description={t(`${key}.description`)}
+                            tags={projectsStaticData[key].tags}
+                            imageUrl={projectsStaticData[key].imageUrl}
+                        />
                     </React.Fragment>
                 ))}
             </div>

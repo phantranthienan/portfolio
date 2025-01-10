@@ -4,8 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-
-import TypingEffect from '@/components/common/TypingEffect';
+import { useTranslations } from 'next-intl';
 
 import { BsArrowRight } from 'react-icons/bs';
 import { HiDownload } from 'react-icons/hi';
@@ -14,8 +13,10 @@ import { useSectionInView } from '@/lib/hooks';
 import { useActiveSectionContext } from '@/context/activeSectionContext';
 
 const Intro = () => {
+    const t = useTranslations('Intro');
     const { ref } = useSectionInView('Home');
     const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
     return (
         <section
             ref={ref}
@@ -47,37 +48,22 @@ const Intro = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <span className="font-bold">
-                    Hello, I&apos;m Tran Thien An PHAN,
-                </span>{' '}
-                currently a{' '}
-                <span className="font-bold">4th-year engineering student</span>{' '}
-                at{' '}
+                <span className="font-bold">{t('greeting')}</span>{' '}
+                {t('student')}{' '}
                 <a
                     href="https://insa-centrevaldeloire.fr/fr/"
                     className="italic underline decoration-dashed underline-offset-2"
                     target="_blank"
                 >
-                    INSA Centre Val de Loire.
+                    {t('university')}
                 </a>
                 <br />
-                I&apos;m seeking{' '}
-                <TypingEffect
-                    texts={[
-                        'a 4-month internship starting April 2025',
-                        'an apprenticeship for 2025-2026',
-                    ]}
-                    delay={500}
-                />
+                {t('seeking')}{' '}
+                <span className="font-bold">{t('internship')}</span>{' '}
+                {t('focus')} <span className="font-bold">{t('frontend')}</span>{' '}
+                {t('and')} <span className="font-bold">{t('fullstack')}</span>.
                 <br />
-                with a focus on <span className="font-bold">
-                    {' '}
-                    Front-End{' '}
-                </span>{' '}
-                or <span className="font-bold">Full-Stack Development.</span>
-                <br />
-                My core technical stack includes{' '}
-                <span className="font-bold">React</span> and{' '}
+                {t('stack')} <span className="font-bold">React</span> {t('and')}{' '}
                 <span className="font-bold">Node.js</span>
             </motion.p>
 
@@ -97,7 +83,7 @@ const Intro = () => {
                         setTimeOfLastClick(Date.now());
                     }}
                 >
-                    Contact me here{' '}
+                    {t('contactButton')}{' '}
                     <BsArrowRight className="transition group-hover:translate-x-1" />
                 </Link>
                 <a
@@ -105,7 +91,7 @@ const Intro = () => {
                     download
                     className="group flex cursor-pointer items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-2 outline-none transition hover:scale-110 active:scale-105"
                 >
-                    Download my CV{' '}
+                    {t('cvButton')}{' '}
                     <HiDownload className="transition group-hover:translate-y-1" />
                 </a>
                 <div className="flex gap-3">

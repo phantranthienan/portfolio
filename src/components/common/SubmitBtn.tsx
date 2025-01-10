@@ -2,8 +2,13 @@ import React from 'react';
 import { useFormStatus } from 'react-dom';
 import { FaPaperPlane } from 'react-icons/fa';
 
-const SubmitBtn = () => {
+type SubmitBtnProps = {
+    label: string;
+};
+
+const SubmitBtn: React.FC<SubmitBtnProps> = ({ label }) => {
     const { pending } = useFormStatus();
+
     return (
         <button
             type="submit"
@@ -13,7 +18,7 @@ const SubmitBtn = () => {
                 <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white" />
             ) : (
                 <>
-                    Submit
+                    {label}
                     <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:-translate-y-1 group-hover:translate-x-1" />
                 </>
             )}

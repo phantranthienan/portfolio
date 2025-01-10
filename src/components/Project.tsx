@@ -3,11 +3,9 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useTransform, useScroll } from 'framer-motion';
 
-import { projectsData } from '@/lib/data';
+import { ProjectData } from '@/lib/types';
 
-type ProjectProps = (typeof projectsData)[number];
-
-const Project: React.FC<ProjectProps> = ({
+const Project: React.FC<ProjectData> = ({
     title,
     description,
     tags,

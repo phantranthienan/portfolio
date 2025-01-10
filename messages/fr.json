@@ -1,0 +1,95 @@
+{
+    "Header": {
+        "links": {
+            "home": "Accueil",
+            "about": "À propos",
+            "projects": "Projets",
+            "skills": "Compétences",
+            "experience": "Expérience",
+            "contact": "Contact"
+        }
+    },
+    "Intro": {
+        "greeting": "Bonjour, je suis Tran Thien An PHAN,",
+        "student": "actuellement un étudiant en 4e année d'ingénierie à",
+        "university": "INSA Centre Val de Loire.",
+        "seeking": "Je recherche",
+        "internship": "un stage à partir d'avril 2025",
+        "focus": "avec un intérêt pour",
+        "frontend": " le développement Front-End",
+        "fullstack": "Full-Stack",
+        "stack": "Mon stack technique principal inclut",
+        "and": "et",
+        "contactButton": "Contactez-moi ici",
+        "cvButton": "Téléchargez mon CV",
+        "linkedin": "Profil LinkedIn",
+        "github": "Profil GitHub"
+    },
+    "About": {
+        "heading": "À propos de moi",
+        "bio": "Un passionné de technologie du Vietnam 👨‍💻 et une machine à coder alimentée par la caféine ☕. Je fais du LeetCode pour le plaisir (et parfois la frustration) 🧠. Curieux, méticuleux, travailleur et motivé par la résolution de problèmes, j'adore traquer les bugs 🪲 (pas vraiment), créer des sites web et explorer de nouvelles technologies !",
+        "languages": {
+            "vietnamese": {
+                "name": "Vietnamien",
+                "description": "Langue maternelle 💅"
+            },
+            "english": {
+                "name": "Anglais",
+                "description": "Courant 🌍"
+            },
+            "french": {
+                "name": "Français",
+                "description": "Toujours en apprentissage 📚"
+            }
+        },
+        "university": "INSA Centre Val de Loire",
+        "hobbies": {
+            "football": "Football",
+            "badminton": "Badminton",
+            "gym": "Gym",
+            "pingpong": "Pingpong"
+        },
+        "quote": {
+            "text": "Les gens pensent que l'informatique est l'art des génies, mais la réalité est tout autre, c'est juste beaucoup de personnes faisant des choses qui s'appuient les unes sur les autres, comme un mur de petites pierres.",
+            "author": "Donald Knuth",
+            "role": "Scientifique en informatique"
+        },
+        "cats": {
+            "title": "J'adore les chats, voici les miens 🐱",
+            "imageAlt": "Mes Chats"
+        }
+    },
+    "Projects": {
+        "heading": "Mes Projets",
+        "kanban": {
+            "title": "Kanban Board",
+            "description": "Une application simple de tableau Kanban pour créer, modifier et supprimer des tâches. Permet aussi de glisser-déposer des tâches entre les colonnes."
+        },
+        "sudoku": {
+            "title": "Sudoku",
+            "description": "Un jeu de Sudoku classique avec plusieurs fonctionnalités telles que l'aide, l'annulation et la réinitialisation. Les utilisateurs peuvent également choisir le niveau de difficulté du jeu."
+        },
+        "vaukazimut": {
+            "title": "Vaukazimut",
+            "description": "Une application mobile pour la course d'orientation, un sport où les participants naviguent entre des points de contrôle avec une carte et une boussole."
+        }
+    },
+    "Skills": {
+        "heading": "Mes Compétences"
+    },
+    "Contact": {
+        "heading": "Contactez-moi",
+        "description": "Contactez-moi directement à <email>phantranthienan1405@gmail.com</email> ou via ce formulaire",
+        "form": {
+            "emailPlaceholder": "Votre e-mail",
+            "messagePlaceholder": "Votre message",
+            "successMessage": "E-mail envoyé avec succès !",
+            "errorMessage": "Échec de l'envoi de l'e-mail. Veuillez réessayer.",
+            "submitButton": "Envoyer"
+        }
+    },
+    "Footer": {
+        "about": "À propos de ce site :",
+        "builtWith": "construit avec React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS, Framer Motion, React Email & Resend, hébergement Vercel."
+    }
+}

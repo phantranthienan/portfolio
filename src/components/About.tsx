@@ -5,10 +5,13 @@ import { motion } from 'framer-motion';
 
 import BentoCard from '@/components/common/BentoCard';
 import SectionHeading from './common/SectionHeading';
-import { Icon } from '@iconify/react';
+import FlagIcon from './common/FlagIcon';
+
+import { useTranslations } from 'next-intl';
 import { useSectionInView } from '@/lib/hooks';
 
 const About = () => {
+    const t = useTranslations('About');
     const { ref } = useSectionInView('About', 0.75);
 
     return (
@@ -25,10 +28,11 @@ const About = () => {
                 }}
                 viewport={{ once: true }}
             >
-                <SectionHeading>about me</SectionHeading>
+                <SectionHeading>{t('heading')}</SectionHeading>
             </motion.div>
 
             <div className="grid w-full grid-cols-2 gap-3 sm:grid-cols-3">
+                {/* Bio Section */}
                 <BentoCard
                     className="order-1 col-span-2 flex items-center justify-center"
                     initial={{ opacity: 0, scale: 0 }}
@@ -40,14 +44,11 @@ const About = () => {
                     viewport={{ once: true }}
                 >
                     <p className="text-justify font-geist-mono text-xs sm:text-sm">
-                        A tech enthusiast from Vietnam 👨‍💻 and a caffeine-powered
-                        code machine ☕. Doing LeetCode for fun (and
-                        frustration) 🧠. Curious, meticulous, hardworking, and
-                        driven by problem-solving, I love chasing bugs 🪲 (not
-                        really), building websites, and exploring new tech!
+                        {t('bio')}
                     </p>
                 </BentoCard>
 
+                {/* Languages Section */}
                 <BentoCard
                     className="order-3 flex flex-col justify-evenly gap-y-2 sm:order-2"
                     initial={{ opacity: 0, scale: 0 }}
@@ -58,38 +59,26 @@ const About = () => {
                     }}
                     viewport={{ once: true }}
                 >
-                    <div className="flex items-center gap-x-2">
-                        <Icon icon="flag:vn-4x3" width={40} />
-                        <p className="text-[0.6rem] min-[400px]:text-xs">
-                            <span className="text-xs font-bold min-[400px]:text-sm">
-                                Vietnamese
-                            </span>
-                            <br />
-                            Mother tongue, nailed it! 💅
-                        </p>
-                    </div>
-                    <div className="flex items-center gap-x-2">
-                        <Icon icon="flag:sh-4x3" width={40} />
-                        <p className="text-[0.6rem] min-[400px]:text-xs">
-                            <span className="text-xs font-bold min-[400px]:text-sm">
-                                English
-                            </span>
-                            <br />
-                            Second language, fluent! 🌍
-                        </p>
-                    </div>
-                    <div className="flex items-center gap-x-2">
-                        <Icon icon="flag:fr-4x3" width={40} />
-                        <p className="text-[0.6rem] min-[400px]:text-xs">
-                            <span className="text-xs font-bold min-[400px]:text-sm">
-                                French
-                            </span>
-                            <br />
-                            Use every day, still learning! 📚
-                        </p>
-                    </div>
+                    {(['vietnamese', 'english', 'french'] as const).map(
+                        (lang) => (
+                            <div
+                                key={lang}
+                                className="flex items-center gap-x-2"
+                            >
+                                <FlagIcon lang={lang} />
+                                <p className="text-[0.6rem] min-[400px]:text-xs">
+                                    <span className="text-xs font-bold min-[400px]:text-sm">
+                                        {t(`languages.${lang}.name`)}
+                                    </span>
+                                    <br />
+                                    {t(`languages.${lang}.description`)}
+                                </p>
+                            </div>
+                        )
+                    )}
                 </BentoCard>
 
+                {/* University Section */}
                 <BentoCard
                     className="order-2 col-span-2 flex items-center justify-center sm:order-3"
                     initial={{ opacity: 0, scale: 0 }}
@@ -111,6 +100,7 @@ const About = () => {
                     />
                 </BentoCard>
 
+                {/* Hobbies Section */}
                 <BentoCard
                     className="order-4 flex items-center justify-center"
                     initial={{ opacity: 0, scale: 0 }}
@@ -122,45 +112,46 @@ const About = () => {
                     viewport={{ once: true }}
                 >
                     <div className="grid grid-cols-2 gap-2">
-                        <div>
+                        <div className="rounded-2xl bg-emerald-100">
                             <Image
                                 src="/images/hobbies/Football.png"
-                                alt="Football"
+                                alt={t('hobbies.football')}
                                 height={100}
                                 width={100}
-                                className="aspect-square w-full rounded-2xl bg-emerald-100"
+                                className="aspect-square w-full rounded-2xl"
                             />
                         </div>
-                        <div>
+                        <div className="rounded-2xl bg-fuchsia-100">
                             <Image
                                 src="/images/hobbies/Badminton.png"
-                                alt="Badminton"
+                                alt={t('hobbies.badminton')}
                                 height={100}
                                 width={100}
-                                className="aspect-square w-full rounded-2xl bg-fuchsia-100"
+                                className="aspect-square w-full rounded-2xl"
                             />
                         </div>
-                        <div>
+                        <div className="rounded-2xl bg-fuchsia-100">
                             <Image
                                 src="/images/hobbies/Gym.png"
-                                alt="Gym"
+                                alt={t('hobbies.gym')}
                                 height={100}
                                 width={100}
-                                className="aspect-square w-full rounded-2xl bg-fuchsia-100"
+                                className="aspect-square w-full rounded-2xl"
                             />
                         </div>
-                        <div>
+                        <div className="rounded-2xl bg-emerald-100">
                             <Image
                                 src="/images/hobbies/Pingpong.png"
-                                alt="PingPong"
+                                alt={t('hobbies.pingpong')}
                                 height={100}
                                 width={100}
-                                className="aspect-square w-full rounded-2xl bg-emerald-100"
+                                className="aspect-square w-full rounded-2xl"
                             />
                         </div>
                     </div>
                 </BentoCard>
 
+                {/* Cats Section */}
                 <BentoCard
                     className="order-6 col-span-2 flex flex-col items-center justify-center text-center text-sm sm:order-5 sm:col-span-1"
                     initial={{ opacity: 0, scale: 0 }}
@@ -171,16 +162,17 @@ const About = () => {
                     }}
                     viewport={{ once: true }}
                 >
-                    I&apos;m a cat lover, here are my cats 🐱
+                    {t('cats.title')}
                     <Image
-                        src={'/images/Cats.jpg'}
-                        alt="My Cats"
+                        src="/images/Cats.jpg"
+                        alt={t('cats.imageAlt')}
                         height={200}
                         width={200}
                         className="mt-2 w-full max-w-[300px] rounded-xl object-cover"
                     />
                 </BentoCard>
 
+                {/* Quote Section */}
                 <BentoCard
                     className="order-5 col-span-2 flex flex-col justify-center gap-y-2 sm:order-6 sm:px-10"
                     initial={{ opacity: 0, scale: 0 }}
@@ -192,15 +184,12 @@ const About = () => {
                     viewport={{ once: true }}
                 >
                     <p className="text-center font-geist-mono text-xs font-medium italic text-gray-700 sm:text-sm">
-                        &quot;People think that computer science is the art of
-                        geniuses but the actual reality is the opposite, just
-                        many people doing things that build on each other, like
-                        a wall of mini stones.&quot;
+                        &quot;{t('quote.text')}&quot;
                     </p>
                     <div className="flex items-center justify-center space-x-2 text-sm tracking-wider sm:text-base">
-                        <p className="text-gray-800">Donald Knuth</p>
+                        <p className="text-gray-800">{t('quote.author')}</p>
                         <span className="text-gray-500">|</span>
-                        <p className="text-gray-800">Computer Scientist</p>
+                        <p className="text-gray-800">{t('quote.role')}</p>
                     </div>
                 </BentoCard>
             </div>

@@ -1,0 +1,95 @@
+{
+    "Header": {
+        "links": {
+            "home": "Home",
+            "about": "About",
+            "projects": "Projects",
+            "skills": "Skills",
+            "experience": "Experience",
+            "contact": "Contact"
+        }
+    },
+    "Intro": {
+        "greeting": "Hello, I'm Tran Thien An PHAN,",
+        "student": "currently a 4th-year engineering student at",
+        "university": "INSA Centre Val de Loire.",
+        "seeking": "I'm seeking",
+        "internship": "an internship starting April 2025",
+        "focus": "with a focus on",
+        "frontend": "Front-End",
+        "fullstack": "Full-Stack Development",
+        "stack": "My core technical stack includes",
+        "and": "and",
+        "contactButton": "Contact me here",
+        "cvButton": "Download my CV",
+        "linkedin": "LinkedIn Profile",
+        "github": "GitHub Profile"
+    },
+    "About": {
+        "heading": "About Me",
+        "bio": "A tech enthusiast from Vietnam 👨‍💻 and a caffeine-powered code machine ☕. Doing LeetCode for fun (and frustration) 🧠. Curious, meticulous, hardworking, and driven by problem-solving, I love chasing bugs 🪲 (not really), building websites, and exploring new tech!",
+        "languages": {
+            "vietnamese": {
+                "name": "Vietnamese",
+                "description": "Mother tongue, nailed it! 💅"
+            },
+            "english": {
+                "name": "English",
+                "description": "Second language, fluent! 🌍"
+            },
+            "french": {
+                "name": "French",
+                "description": "Use every day, still learning! 📚"
+            }
+        },
+        "university": "INSA Centre Val de Loire",
+        "hobbies": {
+            "football": "Football",
+            "badminton": "Badminton",
+            "gym": "Gym",
+            "pingpong": "PingPong"
+        },
+        "quote": {
+            "text": "People think that computer science is the art of geniuses but the actual reality is the opposite, just many people doing things that build on each other, like a wall of mini stones.",
+            "author": "Donald Knuth",
+            "role": "Computer Scientist"
+        },
+        "cats": {
+            "title": "I'm a cat lover, here are my cats 🐱",
+            "imageAlt": "My Cats"
+        }
+    },
+    "Projects": {
+        "heading": "My Projects",
+        "kanban": {
+            "title": "Kanban Board",
+            "description": "A simple Kanban board application that allows users to create, update, and delete tasks. Users can also drag and drop tasks between columns."
+        },
+        "sudoku": {
+            "title": "Sudoku",
+            "description": "A classic Sudoku game with multiple features such as hint, undo, and reset. Users can also choose the difficulty level of the game."
+        },
+        "vaukazimut": {
+            "title": "Vaukazimut",
+            "description": "A mobile app for 'course d'orientation', a sport where participants navigate checkpoints with a map and compass."
+        }
+    },
+    "Skills": {
+        "heading": "My Skills"
+    },
+    "Contact": {
+        "heading": "Contact Me",
+        "description": "Contact me directly at <email>phantranthienan1405@gmail.com</email> or through this form",
+        "form": {
+            "emailPlaceholder": "Your email",
+            "messagePlaceholder": "Your message",
+            "successMessage": "Email sent successfully!",
+            "errorMessage": "Failed to send email. Please try again.",
+            "submitButton": "Submit"
+        }
+    },
+    "Footer": {
+        "about": "About this website:",
+        "builtWith": "built with React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS, Framer Motion, React Email & Resend, Vercel hosting."
+    }
+}

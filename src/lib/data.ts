@@ -45,11 +45,45 @@ export const skillsData = [
     'Java',
 ] as const;
 
-export const projectsData = [
-    {
-        title: 'Kanban Board',
-        description:
-            'A simple Kanban board application that allows users to create, update, and delete tasks. Users can also drag and drop tasks between columns.',
+// export const projectsData = [
+//     {
+//         title: 'Kanban Board',
+//         description:
+//             'A simple Kanban board application that allows users to create, update, and delete tasks. Users can also drag and drop tasks between columns.',
+//         tags: [
+//             'React',
+//             'TypeScript',
+//             'Node.js',
+//             'Express.js',
+//             'MongoDB',
+//             'Redux',
+//         ],
+//         imageUrl: kanbanImg,
+//     },
+//     {
+//         title: 'Sudoku',
+//         description:
+//             'A classic Sudoku game with multiple features such as hint, undo, and reset. Users can also choose the difficulty level of the game.',
+//         tags: ['React', 'JavaScript', 'styled-components', 'Jotai'],
+//         imageUrl: sudokuImg,
+//     },
+//     {
+//         title: 'Vaukazimut',
+//         description:
+//             'A mobile app for "course d\'orientation", a sport where participants navigate checkpoints with a map and compass.',
+//         tags: [
+//             'React Native',
+//             'JavaScript',
+//             'Tailwind',
+//             'Django',
+//             'PostgreSQL',
+//         ],
+//         imageUrl: vaukazimutImg,
+//     },
+// ] as const;
+
+export const projectsStaticData = {
+    kanban: {
         tags: [
             'React',
             'TypeScript',
@@ -60,17 +94,11 @@ export const projectsData = [
         ],
         imageUrl: kanbanImg,
     },
-    {
-        title: 'Sudoku',
-        description:
-            'A classic Sudoku game with multiple features such as hint, undo, and reset. Users can also choose the difficulty level of the game.',
+    sudoku: {
         tags: ['React', 'JavaScript', 'styled-components', 'Jotai'],
         imageUrl: sudokuImg,
     },
-    {
-        title: 'Vaukazimut',
-        description:
-            'A mobile app for "course d\'orientation", a sport where participants navigate checkpoints with a map and compass.',
+    vaukazimut: {
         tags: [
             'React Native',
             'JavaScript',
@@ -80,4 +108,4 @@ export const projectsData = [
         ],
         imageUrl: vaukazimutImg,
     },
-] as const;
+} as const;
