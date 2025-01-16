@@ -33,9 +33,9 @@ const About = () => {
         return currentDate.getDay(); // Returns the current day of the week (0 for Sunday, 1 for Monday, etc.)
     };
 
-    const githubTheme = {
-        light: ['#c9e4ca', '#87bba2', '#55828b', '#3b6064', '#364958'],
-    };
+    // const githubTheme = {
+    //     light: ['#c9e4ca', '#87bba2', '#55828b', '#3b6064', '#364958'],
+    // };
 
     return (
         <section
@@ -228,7 +228,6 @@ const About = () => {
                         weekStart={
                             getCurrentWeekday() as 0 | 1 | 2 | 3 | 4 | 5 | 6
                         }
-                        theme={githubTheme}
                         blockSize={14}
                         blockRadius={8}
                         blockMargin={4}
