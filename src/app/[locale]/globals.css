@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+::-webkit-scrollbar {
+    height: 5px; /* Height of the horizontal scrollbar */
+    width: 5px; /* Width of the vertical scrollbar */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light grey background */
+}
+
+/* Style the draggable thumb */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Grey color */
+}
+
+/* Change the thumb color on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker grey */
+}
+
+/* Style the corner of dual scrollbars */
+::-webkit-scrollbar-corner {
+    background: #f1f1f1; /* Match the track color */
+}

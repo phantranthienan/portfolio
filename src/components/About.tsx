@@ -3,16 +3,39 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+import GitHubCalendar from 'react-github-calendar';
 import BentoCard from '@/components/common/BentoCard';
 import SectionHeading from './common/SectionHeading';
 import FlagIcon from './common/FlagIcon';
+import { Activity } from '@/lib/types';
 
 import { useTranslations } from 'next-intl';
-import { useSectionInView } from '@/lib/hooks';
+import { useSectionInView, useLabels } from '@/lib/hooks';
 
 const About = () => {
     const t = useTranslations('About');
     const { ref } = useSectionInView('About', 0.75);
+    const labels = useLabels();
+
+    const filterContributions = (contributions: Activity[]) => {
+        const currentDate = new Date();
+        const nineMonthsAgo = new Date();
+        nineMonthsAgo.setMonth(currentDate.getMonth() - 9);
+
+        return contributions.filter((activity) => {
+            const date = new Date(activity.date);
+            return date >= nineMonthsAgo && date <= currentDate;
+        });
+    };
+
+    const getCurrentWeekday = () => {
+        const currentDate = new Date();
+        return currentDate.getDay(); // Returns the current day of the week (0 for Sunday, 1 for Monday, etc.)
+    };
+
+    const githubTheme = {
+        light: ['#c9e4ca', '#87bba2', '#55828b', '#3b6064', '#364958'],
+    };
 
     return (
         <section
@@ -191,6 +214,26 @@ const About = () => {
                         <span className="text-gray-500">|</span>
                         <p className="text-gray-800">{t('quote.role')}</p>
                     </div>
+                </BentoCard>
+
+                <BentoCard className="order-7 col-span-2 flex flex-col items-center justify-center gap-1 font-geist-mono sm:col-span-3 sm:gap-4">
+                    <h3 className="text-base uppercase tracking-wider sm:text-xl">
+                        {t('github.title')}
+                    </h3>
+                    <GitHubCalendar
+                        username="phantranthienan"
+                        transformData={filterContributions}
+                        labels={labels}
+                        colorScheme="light"
+                        weekStart={
+                            getCurrentWeekday() as 0 | 1 | 2 | 3 | 4 | 5 | 6
+                        }
+                        theme={githubTheme}
+                        blockSize={14}
+                        blockRadius={8}
+                        blockMargin={4}
+                        fontSize={10}
+                    />
                 </BentoCard>
             </div>
         </section>

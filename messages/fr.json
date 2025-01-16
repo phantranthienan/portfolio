@@ -57,6 +57,9 @@
         "cats": {
             "title": "J'adore les chats, voici les miens 🐱",
             "imageAlt": "Mes Chats"
+        },        
+        "github": {
+            "title": "Activité GitHub"
         }
     },
     "Projects": {
