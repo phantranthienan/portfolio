@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import SectionHeading from './common/SectionHeading';
 import { skillsData } from '@/lib/data';
 import { useSectionInView } from '@/lib/hooks';
+import { renderCustomIcon } from '@/lib/utils';
 
 const fadeInAnimation = {
     initial: {
@@ -34,7 +35,7 @@ const Skills = () => {
             <ul className="flex flex-wrap justify-center gap-2 font-geist-mono text-lg text-gray-800">
                 {skillsData.map((skill, index) => (
                     <motion.li
-                        className="rounded-xl border border-black/[0.1] bg-white px-5 py-3"
+                        className="flex items-center justify-center gap-2 rounded-xl border border-black/[0.1] bg-white px-5 py-3"
                         key={index}
                         variants={fadeInAnimation}
                         initial="initial"
@@ -44,7 +45,7 @@ const Skills = () => {
                         }}
                         custom={index}
                     >
-                        {skill}
+                        {renderCustomIcon(skill.icon, 18)} {skill.name}
                     </motion.li>
                 ))}
             </ul>

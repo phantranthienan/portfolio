@@ -1,41 +1,55 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-
 import GitHubCalendar from 'react-github-calendar';
+import { Cloud, ICloud } from 'react-icon-cloud';
+
 import BentoCard from '@/components/common/BentoCard';
 import SectionHeading from './common/SectionHeading';
 import FlagIcon from './common/FlagIcon';
-import { Activity } from '@/lib/types';
+import { techIconsData } from '@/lib/data';
 
 import { useTranslations } from 'next-intl';
 import { useSectionInView, useLabels } from '@/lib/hooks';
+import {
+    filterContributions,
+    getCurrentWeekday,
+    renderCustomIcon,
+} from '@/lib/utils';
 
 const About = () => {
     const t = useTranslations('About');
     const { ref } = useSectionInView('About', 0.75);
     const labels = useLabels();
 
-    const filterContributions = (contributions: Activity[]) => {
-        const currentDate = new Date();
-        const nineMonthsAgo = new Date();
-        nineMonthsAgo.setMonth(currentDate.getMonth() - 9);
-
-        return contributions.filter((activity) => {
-            const date = new Date(activity.date);
-            return date >= nineMonthsAgo && date <= currentDate;
-        });
-    };
-
-    const getCurrentWeekday = () => {
-        const currentDate = new Date();
-        return currentDate.getDay(); // Returns the current day of the week (0 for Sunday, 1 for Monday, etc.)
-    };
-
     // const githubTheme = {
     //     light: ['#c9e4ca', '#87bba2', '#55828b', '#3b6064', '#364958'],
     // };
+
+    const cloudProps: Omit<ICloud, 'children'> = {
+        containerProps: {
+            style: {
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100%',
+            },
+        },
+        options: {
+            reverse: false,
+            depth: 1,
+            wheelZoom: true,
+            imageScale: 2,
+            activeCursor: 'default',
+            tooltip: 'native',
+            initial: [0.2, 0.2],
+            clickToFront: 500,
+            tooltipDelay: 0,
+            outlineColour: '#0000',
+            maxSpeed: 0.04,
+            minSpeed: 0.02,
+        },
+    };
 
     return (
         <section
@@ -73,7 +87,7 @@ const About = () => {
 
                 {/* Languages Section */}
                 <BentoCard
-                    className="order-3 flex flex-col justify-evenly gap-y-2 sm:order-2"
+                    className="order-2 flex flex-col justify-evenly gap-y-2"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{
                         opacity: 1,
@@ -101,9 +115,9 @@ const About = () => {
                     )}
                 </BentoCard>
 
-                {/* University Section */}
+                {/* GitHub Section */}
                 <BentoCard
-                    className="order-2 col-span-2 flex items-center justify-center sm:order-3"
+                    className="order-4 col-span-2 flex flex-col items-center justify-center gap-1 font-geist-mono sm:order-3 sm:col-span-3 sm:gap-4"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{
                         opacity: 1,
@@ -112,111 +126,6 @@ const About = () => {
                     }}
                     viewport={{ once: true }}
                 >
-                    <Image
-                        src="/images/Logo_INSACVL.png"
-                        alt="INSA Centre Val de Loire"
-                        width={400}
-                        height={100}
-                        quality="100"
-                        priority={true}
-                        className="w-full object-contain"
-                    />
-                </BentoCard>
-
-                {/* Hobbies Section */}
-                <BentoCard
-                    className="order-4 flex items-center justify-center"
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{
-                        opacity: 1,
-                        scale: 1,
-                        transition: { type: 'tween' },
-                    }}
-                    viewport={{ once: true }}
-                >
-                    <div className="grid grid-cols-2 gap-2">
-                        <div className="rounded-2xl bg-emerald-100">
-                            <Image
-                                src="/images/hobbies/Football.png"
-                                alt={t('hobbies.football')}
-                                height={100}
-                                width={100}
-                                className="aspect-square w-full rounded-2xl"
-                            />
-                        </div>
-                        <div className="rounded-2xl bg-fuchsia-100">
-                            <Image
-                                src="/images/hobbies/Badminton.png"
-                                alt={t('hobbies.badminton')}
-                                height={100}
-                                width={100}
-                                className="aspect-square w-full rounded-2xl"
-                            />
-                        </div>
-                        <div className="rounded-2xl bg-fuchsia-100">
-                            <Image
-                                src="/images/hobbies/Gym.png"
-                                alt={t('hobbies.gym')}
-                                height={100}
-                                width={100}
-                                className="aspect-square w-full rounded-2xl"
-                            />
-                        </div>
-                        <div className="rounded-2xl bg-emerald-100">
-                            <Image
-                                src="/images/hobbies/Pingpong.png"
-                                alt={t('hobbies.pingpong')}
-                                height={100}
-                                width={100}
-                                className="aspect-square w-full rounded-2xl"
-                            />
-                        </div>
-                    </div>
-                </BentoCard>
-
-                {/* Cats Section */}
-                <BentoCard
-                    className="order-6 col-span-2 flex flex-col items-center justify-center text-center text-sm sm:order-5 sm:col-span-1"
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{
-                        opacity: 1,
-                        scale: 1,
-                        transition: { type: 'tween' },
-                    }}
-                    viewport={{ once: true }}
-                >
-                    {t('cats.title')}
-                    <Image
-                        src="/images/Cats.jpg"
-                        alt={t('cats.imageAlt')}
-                        height={200}
-                        width={200}
-                        className="mt-2 w-full max-w-[300px] rounded-xl object-cover"
-                    />
-                </BentoCard>
-
-                {/* Quote Section */}
-                <BentoCard
-                    className="order-5 col-span-2 flex flex-col justify-center gap-y-2 sm:order-6 sm:px-10"
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{
-                        opacity: 1,
-                        scale: 1,
-                        transition: { type: 'tween' },
-                    }}
-                    viewport={{ once: true }}
-                >
-                    <p className="text-center font-geist-mono text-xs font-medium italic text-gray-700 sm:text-sm">
-                        &quot;{t('quote.text')}&quot;
-                    </p>
-                    <div className="flex items-center justify-center space-x-2 text-sm tracking-wider sm:text-base">
-                        <p className="text-gray-800">{t('quote.author')}</p>
-                        <span className="text-gray-500">|</span>
-                        <p className="text-gray-800">{t('quote.role')}</p>
-                    </div>
-                </BentoCard>
-
-                <BentoCard className="order-7 col-span-2 flex flex-col items-center justify-center gap-1 font-geist-mono sm:col-span-3 sm:gap-4">
                     <h3 className="text-base uppercase tracking-wider sm:text-xl">
                         {t('github.title')}
                     </h3>
@@ -233,6 +142,47 @@ const About = () => {
                         blockMargin={4}
                         fontSize={10}
                     />
+                </BentoCard>
+
+                {/* Tech Stack Section */}
+                <BentoCard
+                    className="order-3 col-span-1 flex items-center justify-center sm:order-4"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                        transition: { type: 'tween' },
+                    }}
+                    viewport={{ once: true }}
+                >
+                    <Cloud {...cloudProps}>
+                        {techIconsData.map((icon) => (
+                            <div key={icon.slug}>
+                                {renderCustomIcon(icon, 50)}
+                            </div>
+                        ))}
+                    </Cloud>
+                </BentoCard>
+
+                {/* Quote Section */}
+                <BentoCard
+                    className="order-5 col-span-2 flex flex-col justify-center gap-y-2 sm:px-10"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                        transition: { type: 'tween' },
+                    }}
+                    viewport={{ once: true }}
+                >
+                    <p className="text-center font-geist-mono text-xs font-medium italic text-gray-700 sm:text-sm">
+                        &quot;{t('quote.text')}&quot;
+                    </p>
+                    <div className="flex items-center justify-center space-x-2 text-sm tracking-wider sm:text-base">
+                        <p className="text-gray-800">{t('quote.author')}</p>
+                        <span className="text-gray-500">|</span>
+                        <p className="text-gray-800">{t('quote.role')}</p>
+                    </div>
                 </BentoCard>
             </div>
         </section>
