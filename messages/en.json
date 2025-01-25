@@ -15,8 +15,7 @@
         "university": "INSA Centre Val de Loire.",
         "seeking": "I'm seeking",
         "internship": "an internship starting April 2025",
-        "focus": "with a focus on",
-        "frontend": "Front-End",
+        "focus": "with a focus on", 
         "fullstack": "Full-Stack Development",
         "stack": "My core technical stack includes",
         "and": "and",
@@ -75,6 +74,10 @@
         "vaukazimut": {
             "title": "Vaukazimut",
             "description": "A mobile app for 'course d'orientation', a sport where participants navigate checkpoints with a map and compass."
+        },
+        "urlshortener": {
+            "title": "URL Shortener",
+            "description": "A simple tool to shorten long links into short and easy-to-share URLs. It also includes analytics features to track the number of clicks."
         }
     },
     "Skills": {

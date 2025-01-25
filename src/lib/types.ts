@@ -8,6 +8,8 @@ export type ProjectData = {
     description: string;
     tags: readonly string[];
     imageUrl: StaticImageData;
+    liveUrl: string | null;
+    githubUrl: string;
 };
 
 export type Activity = {

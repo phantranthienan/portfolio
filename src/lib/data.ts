@@ -28,6 +28,7 @@ import {
 import kanbanImg from '@/../public/images/projects/kanban.png';
 import sudokuImg from '@/../public/images/projects/sudoku.png';
 import vaukazimutImg from '@/../public/images/projects/vaukazimut.png';
+import urlshortenerImg from '@/../public/images/projects/urlshortener.png';
 
 export const links = [
     {
@@ -123,10 +124,14 @@ export const projectsStaticData = {
             'Redux',
         ],
         imageUrl: kanbanImg,
+        liveUrl: 'https://dnd-kanban.up.railway.app',
+        githubUrl: 'https://github.com/phantranthienan/kanban-board',
     },
     sudoku: {
         tags: ['React', 'JavaScript', 'styled-components', 'Jotai'],
         imageUrl: sudokuImg,
+        liveUrl: 'https://sudoku-moodyraccoon.vercel.app',
+        githubUrl: 'https://github.com/phantranthienan/classic-sudoku',
     },
     vaukazimut: {
         tags: [
@@ -137,6 +142,14 @@ export const projectsStaticData = {
             'PostgreSQL',
         ],
         imageUrl: vaukazimutImg,
+        liveUrl: null,
+        githubUrl: 'https://github.com/phantranthienan/vaukazimut-frontend',
+    },
+    urlshortener: {
+        tags: ['Next.js', 'TypeScript', 'Tailwindcss', 'PostgreSQL', 'Prisma'],
+        imageUrl: urlshortenerImg,
+        liveUrl: 'https://shixt.vercel.app',
+        githubUrl: 'https://github.com/phantranthienan/url-shortener',
     },
 } as const;
 

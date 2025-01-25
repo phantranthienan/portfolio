@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useTransform, useScroll } from 'framer-motion';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 import { ProjectData } from '@/lib/types';
 
@@ -10,6 +11,8 @@ const Project: React.FC<ProjectData> = ({
     description,
     tags,
     imageUrl,
+    liveUrl,
+    githubUrl,
 }) => {
     const ref = useRef<HTMLElement>(null);
 
@@ -31,7 +34,25 @@ const Project: React.FC<ProjectData> = ({
             className="group relative mb-3 max-w-[44rem] overflow-hidden rounded-xl border border-black/5 bg-gray-100 transition last:mb-0 hover:bg-gray-200 sm:mb-8 sm:h-[22rem]"
         >
             <div className="flex h-full flex-col py-4 pl-4 sm:max-w-[50%] sm:py-8 sm:pl-8 sm:group-even:ml-[50%] sm:group-even:pl-0 sm:group-even:pr-8">
-                <h3 className="text-2xl font-semibold"> {title} </h3>
+                <div className="flex items-center gap-4">
+                    <h3 className="text-2xl font-semibold"> {title} </h3>
+                    {liveUrl && (
+                        <a href={liveUrl} target="_blank" title="Live Demo">
+                            <FaExternalLinkAlt
+                                className="text-gray-700 transition-colors hover:text-black"
+                                size={20}
+                            />
+                        </a>
+                    )}
+                    {githubUrl && (
+                        <a href={githubUrl} target="_blank" title="GitHub">
+                            <FaGithub
+                                className="text-gray-700 transition-colors hover:text-black"
+                                size={20}
+                            />
+                        </a>
+                    )}
+                </div>
                 <p className="mt-2 text-lg leading-relaxed text-gray-700">
                     {description}
                 </p>

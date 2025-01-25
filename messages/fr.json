@@ -16,8 +16,7 @@
         "seeking": "Je recherche",
         "internship": "un stage à partir d'avril 2025",
         "focus": "avec un intérêt pour",
-        "frontend": " le développement Front-End",
-        "fullstack": "Full-Stack",
+        "fullstack": "le développement Full-Stack",
         "stack": "Mon stack technique principal inclut",
         "and": "et",
         "contactButton": "Contactez-moi ici",
@@ -75,6 +74,10 @@
         "vaukazimut": {
             "title": "Vaukazimut",
             "description": "Une application mobile pour la course d'orientation, un sport où les participants naviguent entre des points de contrôle avec une carte et une boussole."
+        },
+        "urlshortener": {
+            "title": "URL Shortener",
+            "description": "Un outil simple pour raccourcir des liens longs en des URL courtes et faciles à partager. Il inclut également des fonctionnalités d'analyse pour suivre le nombre de clics."
         }
     },
     "Skills": {

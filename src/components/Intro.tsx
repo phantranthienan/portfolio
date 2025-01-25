@@ -60,8 +60,8 @@ const Intro = () => {
                 <br />
                 {t('seeking')}{' '}
                 <span className="font-bold">{t('internship')}</span>{' '}
-                {t('focus')} <span className="font-bold">{t('frontend')}</span>{' '}
-                {t('and')} <span className="font-bold">{t('fullstack')}</span>.
+                {t('focus')} <span className="font-bold">{t('fullstack')}</span>
+                .
                 <br />
                 {t('stack')} <span className="font-bold">React</span> {t('and')}{' '}
                 <span className="font-bold">Node.js</span>

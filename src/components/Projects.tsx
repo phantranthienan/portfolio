@@ -10,7 +10,7 @@ import { projectsStaticData } from '@/lib/data';
 const Projects = () => {
     const t = useTranslations('Projects');
     const { ref } = useSectionInView('Projects', 0.5);
-    const keys = ['kanban', 'sudoku', 'vaukazimut'] as const;
+    const keys = ['kanban', 'sudoku', 'vaukazimut', 'urlshortener'] as const;
 
     return (
         <section ref={ref} id="projects" className="mb-16 scroll-mt-24 sm:mb-0">
@@ -23,6 +23,8 @@ const Projects = () => {
                             description={t(`${key}.description`)}
                             tags={projectsStaticData[key].tags}
                             imageUrl={projectsStaticData[key].imageUrl}
+                            liveUrl={projectsStaticData[key].liveUrl}
+                            githubUrl={projectsStaticData[key].githubUrl}
                         />
                     </React.Fragment>
                 ))}
