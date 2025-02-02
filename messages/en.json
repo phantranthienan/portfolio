@@ -26,7 +26,7 @@
     },
     "About": {
         "heading": "About Me",
-        "bio": "A tech enthusiast from Vietnam 👨‍💻 and a caffeine-powered code machine ☕. Doing LeetCode for fun (and frustration) 🧠. Curious, meticulous, hardworking, and driven by problem-solving, I love chasing bugs 🪲 (not really), building websites, and exploring new tech!",
+        "bio": "Full-stack developer 👨‍💻 code machine running on coffee ☕. 🚀 Skilled in both frontend (⚛️ React) and backend (🛠️ Express), with experience using 🐳 Docker and ⚙️ CI/CD (GitHub Actions). Curious, meticulous, and and problem-solving driven, I enjoy 🐛 debugging (not really), optimizing systems, and exploring new technologies.💡",
         "languages": {
             "vietnamese": {
                 "name": "Vietnamese",
@@ -96,6 +96,6 @@
     },
     "Footer": {
         "about": "About this website:",
-        "builtWith": "built with React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS, Framer Motion, React Email & Resend, Vercel hosting."
+        "builtWith": "developed with React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS, Framer Motion, React Email & Resend, Vercel hosting."
     }
 }
